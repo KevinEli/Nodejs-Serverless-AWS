@@ -2,12 +2,30 @@
   "name": "aws-lambda-api",
   "version": "1.0.0",
   "description": "",
-  "main": "handler.js",
+  "main": "handler.ts",
   "scripts": {
     "invoke": "sls invoke local -f hello",
-    "deploy": "sls deploy --stage dev --verbose"
+    "local": "serverless offline",
+    "deploy": "sls deploy --stage dev --verbose",
+    "test-handler": "mocha -r ts-node/register tests/*.spec.ts"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "aws-lambda": "^1.0.6",
+    "serverless-plugin-typescript": "^1.1.9"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.82",
+    "@types/chai": "^4.2.21",
+    "@types/lambda-tester": "^3.6.1",
+    "@types/mocha": "^9.0.0",
+    "chai": "^4.3.4",
+    "lambda-tester": "^4.0.1",
+    "mocha": "^9.0.3",
+    "serverless-offline": "^8.0.0",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.3.5"
+  }
 }

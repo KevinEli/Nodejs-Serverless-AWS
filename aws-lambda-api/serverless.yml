@@ -10,6 +10,10 @@ provider:
   profile: deploy-aws
   region: us-east-2
 
+plugins:
+  - serverless-plugin-typescript 
+  - serverless-offline
+  
 functions:
   hello:
     handler: handler.hello
